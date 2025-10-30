@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedGold Onions - Fresh Local Onions</title>
+  <style>
+    /* --- GLOBAL STYLES --- */
+    :root {
+      --main-red: #b71c1c;
+      --light-red: #d32f2f;
+      --accent: #ff8a65;
+      --bg: #fff6f5;
+      --text: #2c2c2c;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--main-red), var(--light-red));
+      color: white;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    /* --- HERO SECTION --- */
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: url('https://images.unsplash.com/photo-1580910051073-d1e4f59b46c8?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(183, 28, 28, 0.7);
+      z-index: 0;
+    }
+
+    .hero h2, .hero p, .hero button {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .hero button {
+      background: var(--accent);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      background: #ff7043;
+    }
+
+    /* --- ABOUT SECTION --- */
+    .about {
+      padding: 60px 20px;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .about h3 {
+      color: var(--main-red);
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    /* --- PRODUCTS --- */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .product:hover {
+      transform: scale(1.03);
+    }
+
+    .product img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .product h4 {
+      margin: 15px;
+      color: var(--light-red);
+    }
+
+    .product p {
+      margin: 0 15px 15px;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background: var(--main-red);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* --- JS Animation --- */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>RedGold Onions</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Fresh, Local, and Full of Flavor</h2>
+    <p>Your trusted source for premium onions from local farms.</p>
+    <button onclick="scrollToSection('products')">Shop Now</button>
+  </section>
+
+  <section id="about" class="about fade-in">
+    <h3>About Us</h3>
+    <p>
+      At RedGold Onions, we pride ourselves on providing the freshest onions 
+      sourced directly from local farmers. Our mission is to bring quality produce 
+      to your table while supporting sustainable agriculture in our community.
+    </p>
+  </section>
+
+  <section id="products" class="products">
+    <div class="product fade-in">
+      <img src="https://images.unsplash.com/photo-1582719478181-2c44a37e43c1?auto=format&fit=crop&w=800&q=80" alt="Red Onions">
+      <h4>Red Onions</h4>
+      <p>Sweet and crisp, perfect for salads and grilling.</p>
+    </div>
+    <div class="product fade-in">
+      <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?auto=format&fit=crop&w=800&q=80" alt="White Onions">
+      <h4>White Onions</h4>
+      <p>Mild flavor ideal for sauces and soups.</p>
+    </div>
+    <div class="product fade-in">
+      <img src="https://images.unsplash.com/photo-1590080875832-3e87c96b7e2c?auto=format&fit=crop&w=800&q=80" alt="Yellow Onions">
+      <h4>Yellow Onions</h4>
+      <p>Classic choice for cooking and caramelizing.</p>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>📞 Call us: +91 98765 43210 | 📧 redgoldonions@gmail.com</p>
+    <p>© 2025 RedGold Onions. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll to section
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Fade-in on scroll
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.2 });
+
+    faders.forEach(fade => appearOnScroll.observe(fade));
+  </script>
+
+</body>
+</html>
